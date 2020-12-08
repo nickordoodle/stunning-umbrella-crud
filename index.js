@@ -16,7 +16,7 @@ server.post("/employees", (req, res) => {
 //route to return list of all employees
 server.get("/employees", (req, res) => {
   res.send(employees);
-})
+});
 
 //route to return employees by role
 server.get("/employees/:role", (req, res) => {
@@ -31,7 +31,7 @@ server.get("/employees/:id", (req, res) => {
   const eId = req.params.id;
   const results = employees.filter(emp => emp.eId === eId);
 
-  res.send(results);
+  res.send(results[0]);
 })
 
 //route to change employees information by id
